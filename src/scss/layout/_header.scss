@@ -5,7 +5,7 @@
 @use "sass:map";
 @use "../foundation" as foundation;
 
-.l-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,8 +19,8 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: foundation.to-rem(1280); // 中身の最大幅
-    margin: 0 auto; // 左右中央寄せ
+    max-width: foundation.to-rem(1280);
+    margin: 0 auto;
     padding: 0 foundation.to-rem(40);
   }
 
@@ -32,16 +32,6 @@
     img {
       display: block;
       mix-blend-mode: multiply;
-    }
-  }
-
-  &__nav {
-    flex: 1;
-
-    &-list {
-      display: flex;
-      align-items: center;
-      gap: foundation.to-rem(32);
     }
   }
 
@@ -60,5 +50,35 @@
     font-size: foundation.to-rem(14);
     font-weight: bold;
     text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+// ---- Nav（ヘッダー内のナビゲーション。独立したBlockとして切り出し） ----
+.nav {
+  flex: 1;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: foundation.to-rem(32);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: foundation.to-rem(4);
+    color: foundation.$color-text;
+    font-size: foundation.to-rem(14);
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
