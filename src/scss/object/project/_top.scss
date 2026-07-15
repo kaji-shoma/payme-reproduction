@@ -32,7 +32,7 @@
 
   &__heading {
     margin-top: foundation.to-rem(16);
-    color: foundation.$color-text;
+    color: foundation.$color-202020;
     font-size: foundation.to-rem(40);
     font-weight: bold;
     line-height: 1.5;
@@ -40,7 +40,7 @@
 
   &__lead {
     margin-top: foundation.to-rem(16);
-    color: foundation.$color-text;
+    color: foundation.$color-202020;
     font-size: foundation.to-rem(16);
     font-weight: bold;
     line-height: 1.8;
@@ -116,7 +116,7 @@
   &__item {
     flex: 0 0 140px;
     height: 62px;
-    background-color: foundation.$color-placeholder;
+    background-color: foundation.$color-d9d9d9;
     border-radius: 4px;
   }
 }

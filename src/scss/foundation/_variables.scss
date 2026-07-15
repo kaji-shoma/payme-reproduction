@@ -3,35 +3,24 @@
 // サイト全体で使い回す値を集約する
 // ==========================================================================
 
-// rem変換の基準値（規約6: to-rem関数で使用）
+// rem変換の基準値(規約6: to-rem関数で使用)
 $baseFontSize: 16;
 
-// ---- ① Primitive（生の色。実際のカラーコードはここだけで管理） ----
-$palette-yellow: #ffe000;
-$palette-teal: #249ea6;
-$palette-teal-light: #ecf2f9;
-$palette-charcoal: #202020;
-$palette-gray-100: #f2f2f2;
-$palette-gray-300: #d9d9d9;
-$palette-gold: #dec514;
-$palette-border-gray: #efefef;
-$palette-white: #ffffff;
-
-// ---- ② Semantic（役割名。コンポーネント側は必ずこちらを参照する） ----
-$color-brand: $palette-yellow; // ブランドカラー（ヘッダー・CTA帯・フッター背景）
-$color-accent: $palette-teal; // アクセントカラー（リンク・アウトラインボタン・強調テキスト）
-$color-accent-bg: $palette-teal-light; // アウトラインボタンの背景
-$color-text: $palette-charcoal; // 本文テキスト
-$color-bg-subtle: $palette-gray-100; // セクション背景の薄いグレー
-$color-placeholder: $palette-gray-300; // ロゴ枠・システム連携枠のプレースホルダー
-$color-highlight-number: $palette-gold; // メリットの数字(01/02/03)
-$color-border: $palette-border-gray; // セキュリティカードの枠線
-$color-white: $palette-white;
+// Color(カラーコードそのものを変数名にする。役割名は付けない)
+$color-ffe000: #ffe000; // ヘッダー・CTA帯・フッター背景の黄色
+$color-249ea6: #249ea6; // アクセントカラー(リンク・アウトラインボタン・強調テキスト)
+$color-ecf2f9: #ecf2f9; // アウトラインボタンの背景
+$color-202020: #202020; // 本文テキスト
+$color-f2f2f2: #f2f2f2; // セクション背景の薄いグレー
+$color-d9d9d9: #d9d9d9; // プレースホルダー(ロゴ枠・システム連携枠)
+$color-dec514: #dec514; // メリットの数字(01/02/03)
+$color-efefef: #efefef; // セキュリティカードの枠線
+$color-ffffff: #ffffff; // 白
 
 // Font
 $font-family-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
-// Breakpoint（768px を境に PC / SP を切り替える）
+// Breakpoint(768px を境に PC / SP を切り替える)
 $breakpoints: (
   sp: 768px,
 );
@@ -44,4 +33,4 @@ $z-index: (
 );
 
 // Layout Size
-$header-height: 90px; // ヘッダーの高さ（fixed解除時の余白計算にも使用）
+$header-height: 90px; // ヘッダーの高さ(fixed解除時の余白計算にも使用)

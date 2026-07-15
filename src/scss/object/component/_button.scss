@@ -9,8 +9,8 @@
   padding: foundation.to-em(16, 16) foundation.to-em(16, 32); // 規約6: paddingは文字サイズに依存させたいのでem
   border: 2px solid transparent;
   border-radius: 999px;
-  background-color: foundation.$color-accent;
-  color: foundation.$color-white;
+  background-color: foundation.$color-249ea6;
+  color: foundation.$color-ffffff;
   font-size: foundation.to-rem(16);
   font-weight: bold;
   text-align: center;
@@ -22,9 +22,9 @@
 
   // アウトライン型（資料ダウンロード等の白背景+枠線ボタン）
   &--outline {
-    background-color: foundation.$color-accent-bg;
-    border-color: foundation.$color-accent;
-    color: foundation.$color-accent;
+    background-color: foundation.$color-ecf2f9;
+    border-color: foundation.$color-249ea6;
+    color: foundation.$color-249ea6;
   }
 
   // 小さいサイズ（ヘッダー・帯セクションのボタン用）

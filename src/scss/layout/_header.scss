@@ -12,7 +12,7 @@
   width: 100%;
   height: foundation.$header-height;
   z-index: map.get(foundation.$z-index, header);
-  background-color: foundation.$color-brand;
+  background-color: foundation.$color-ffe000;
 
   &__inner {
     display: flex;
@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     gap: foundation.to-rem(4);
-    color: foundation.$color-text;
+    color: foundation.$color-202020;
     font-size: foundation.to-rem(14);
     font-weight: bold;
     text-decoration: none;
@@ -71,7 +71,7 @@
     display: flex;
     align-items: center;
     gap: foundation.to-rem(4);
-    color: foundation.$color-text;
+    color: foundation.$color-202020;
     font-size: foundation.to-rem(14);
     font-weight: bold;
     text-decoration: none;
