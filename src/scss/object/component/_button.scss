@@ -1,0 +1,35 @@
+// ==========================================================================
+// Object / Component / Button
+// c- プレフィックス：どのページでも使い回せる最小単位の部品
+// ==========================================================================
+@use "../../foundation" as foundation;
+
+.c-button {
+  display: inline-block;
+  padding: foundation.to-em(16, 16) foundation.to-em(16, 32); // 規約6: paddingは文字サイズに依存させたいのでem
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-color: foundation.$color-accent;
+  color: foundation.$color-white;
+  font-size: foundation.to-rem(16);
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // アウトライン型（資料ダウンロード等の白背景+枠線ボタン）
+  &--outline {
+    background-color: foundation.$color-accent-bg;
+    border-color: foundation.$color-accent;
+    color: foundation.$color-accent;
+  }
+
+  // 小さいサイズ（ヘッダー・帯セクションのボタン用）
+  &--sm {
+    padding: foundation.to-em(12, 10) foundation.to-em(12, 24);
+    font-size: foundation.to-rem(12);
+  }
+}

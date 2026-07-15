@@ -1,0 +1,94 @@
+// ==========================================================================
+// Object / Project / Top
+// LP「payme-reproduction」1ページ分のスタイルをまとめる
+// ==========================================================================
+@use "../../foundation" as foundation;
+
+// ---- Hero ----
+.p-hero {
+  position: relative;
+  padding-top: foundation.$header-height;
+  background-image: url("../../../assets/top/hero-bg.webp");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  overflow: hidden;
+
+  &__inner {
+    position: relative; // 背景画像より手前に表示するため
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: foundation.to-rem(1280);
+    margin: 0 auto;
+    padding: foundation.to-rem(64) foundation.to-rem(40);
+  }
+
+&__body {
+  position: relative; // absoluteにするbadgeの基準にする
+  flex: 0 0 foundation.to-rem(560);
+}
+
+&__badge {
+  position: absolute;
+  top: foundation.to-rem(-25);
+  left: foundation.to-rem(294); // 見出しの右側あたりに配置(仮の値)
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between; // 追加：3つの要素を均等に配置
+  box-sizing: border-box;
+  width: foundation.to-rem(204);
+  aspect-ratio: 204 / 69.066;
+  gap: foundation.to-rem(4);
+  padding: 0 foundation.to-rem(16) foundation.to-rem(20);
+  background-image: url("../../../assets/top/hero-badge-bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-size: foundation.to-rem(13);
+  font-weight: bold;
+
+  &-label {
+    position: relative;
+    top: foundation.to-rem(10);
+  }
+
+  &-count {
+    font-size: foundation.to-rem(25);
+  }
+}  
+
+  &__heading {
+    margin-top: foundation.to-rem(16);
+    color: foundation.$color-text;
+    font-size: foundation.to-rem(40);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__lead {
+    margin-top: foundation.to-rem(16);
+    color: foundation.$color-text;
+    font-size: foundation.to-rem(16);
+    font-weight: bold; // 追加
+    line-height: 1.8;
+    letter-spacing: 0.1em; // 追加：文字同士の間隔を少し広げる
+  }
+
+  &__cta {
+    display: block; // c-buttonのデフォルトはinline-blockなので、blockに上書き
+    width: fit-content; // ボタンの中身の幅だけを、要素自体の幅にする
+    margin: foundation.to-rem(32) auto 0; // 上32px、左右autoで中央寄せ
+  }
+
+  &__visual {
+    flex: 1 1 foundation.to-rem(580); // 基準は580pxだが、必要なら縮む
+    min-width: 0; // flexアイテムが縮む時の下限を明示的に解除
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

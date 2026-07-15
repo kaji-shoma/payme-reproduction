@@ -1,0 +1,23 @@
+// ==========================================================================
+// Foundation / Function
+// 規約6: px → rem / em / vw への変換関数
+// ==========================================================================
+@use "sass:math";
+@use "variables" as vars;
+
+// pxをremに変換（marginなど）
+@function to-rem($pixel) {
+  @return math.div($pixel, vars.$baseFontSize) * 1rem;
+}
+
+// pxをemに変換（文字サイズに依存させたいpadding等）
+// $basis: 基準となる要素のfont-size(px) / $pixel: 変換したい値(px)
+@function to-em($basis, $pixel) {
+  @return math.div($pixel, $basis) * 1em;
+}
+
+// pxをvwに変換（画面幅に応じて可変させたい場合）
+// $base: 基準となるデザインカンプの画面幅(px)。今回はFigmaのPCデザイン幅を想定
+@function to-vw($pixel, $base: 1440) {
+  @return math.div($pixel, $base) * 100vw;
+}

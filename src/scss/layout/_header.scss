@@ -1,0 +1,64 @@
+// ==========================================================================
+// Layout / Header
+// サイト共通のヘッダー枠
+// ==========================================================================
+@use "sass:map";
+@use "../foundation" as foundation;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: foundation.$header-height;
+  z-index: map.get(foundation.$z-index, header);
+  background-color: foundation.$color-brand;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: foundation.to-rem(1280); // 中身の最大幅
+    margin: 0 auto; // 左右中央寄せ
+    padding: 0 foundation.to-rem(40);
+  }
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+    margin-right: foundation.to-rem(40);
+
+    img {
+      display: block;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__nav {
+    flex: 1;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: foundation.to-rem(32);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: foundation.to-rem(16);
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+    gap: foundation.to-rem(4);
+    color: foundation.$color-text;
+    font-size: foundation.to-rem(14);
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

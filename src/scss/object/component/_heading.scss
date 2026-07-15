@@ -1,0 +1,18 @@
+// ==========================================================================
+// Object / Component / Heading
+// c- プレフィックス：見出しの最小単位の部品
+// ==========================================================================
+@use "../../foundation" as foundation;
+
+.c-heading {
+  font-weight: bold;
+  line-height: 1.4;
+
+  &--lg {
+    font-size: foundation.to-rem(36);
+  }
+
+  &--md {
+    font-size: foundation.to-rem(24);
+  }
+}

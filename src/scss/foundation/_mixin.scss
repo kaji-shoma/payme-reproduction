@@ -1,0 +1,13 @@
+// ==========================================================================
+// Foundation / Mixin
+// ==========================================================================
+@use "sass:map";
+@use "variables" as vars;
+
+// レスポンシブ用mixin（ブレイクポイント768px以下をSP用として上書き）
+// 使い方: .l-header { width: 100%; @include mq(sp) { width: 90%; } }
+@mixin mq($breakpoint: sp) {
+  @media (max-width: map.get(vars.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}

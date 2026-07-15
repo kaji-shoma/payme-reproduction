@@ -1,0 +1,13 @@
+// ==========================================================================
+// Object / Component / Icon Arrow
+// 下向き三角形をCSSのborderのみで表現する（画像を使わない）
+// ==========================================================================
+.c-icon-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  vertical-align: middle;
+}

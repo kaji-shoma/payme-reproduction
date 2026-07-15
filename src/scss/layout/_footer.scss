@@ -1,0 +1,9 @@
+// ==========================================================================
+// Layout / Footer
+// ==========================================================================
+@use "../foundation" as foundation;
+
+.l-footer {
+  background-color: foundation.$color-brand;
+  color: foundation.$color-text;
+}

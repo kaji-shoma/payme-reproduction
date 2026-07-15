@@ -1,0 +1,17 @@
+// ==========================================================================
+// style.scss
+// このファイルが唯一のエントリーポイント。main.jsからはこれだけをimportする。
+//
+// FLOCSSの詳細度・カスケード順を守るため、必ずこの並び順で@useすること。
+//   1. foundation（土台）
+//   2. layout（大枠）
+//   3. object/component（最小部品）
+//   4. object/project（固有パーツ）
+//   5. object/utility（補助クラス。最後に読み込み優先度を担保する）
+// ==========================================================================
+
+@use "foundation";
+@use "layout";
+@use "object/component";
+@use "object/project";
+@use "object/utility";

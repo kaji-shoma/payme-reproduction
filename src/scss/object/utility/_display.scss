@@ -1,0 +1,21 @@
+// ==========================================================================
+// Object / Utility / Display
+// PC/SPで表示・非表示を切り替えるためのユーティリティ
+// ==========================================================================
+@use "../../foundation" as foundation;
+
+// PCでは非表示、SPでのみ表示する
+.u-pc-none {
+  display: none !important;
+
+  @include foundation.mq(sp) {
+    display: block !important;
+  }
+}
+
+// SPでは非表示、PCでのみ表示する
+.u-sp-none {
+  @include foundation.mq(sp) {
+    display: none !important;
+  }
+}
