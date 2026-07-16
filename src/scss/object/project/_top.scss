@@ -368,3 +368,75 @@
         text-align: center;
     }
 }
+
+// ---- Integrations ----
+.integrations {
+    padding: to-rem(98) to-rem(40);
+    background-color: $color-f2f2f2;
+
+    &__inner {
+        max-width: to-rem(960);
+        margin: 0 auto;
+    }
+
+    &__heading {
+        color: $color-202020;
+        font-size: to-rem(32);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__lead {
+        margin-top: to-rem(16);
+        color: $color-202020;
+        font-size: to-rem(15);
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    &__row {
+        display: flex;
+        gap: to-rem(22);
+        margin-top: to-rem(24);
+    }
+
+    &__note {
+        margin-top: to-rem(24);
+        color: $color-202020;
+        font-size: to-rem(12);
+        text-align: right;
+    }
+}
+
+// ---- Card(連携先をまとめる白背景カード。独立したBlockとして切り出し) ----
+.card {
+    flex: 1;
+    margin-top: to-rem(24);
+    padding: to-rem(14) to-rem(21) to-rem(26);
+    background-color: $color-ffffff;
+    border-radius: to-rem(8);
+
+    &__title {
+        color: $color-202020;
+        font-size: to-rem(18);
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+// ---- Logos(企業ロゴのプレースホルダー枠) ----
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: to-rem(22);
+    margin-top: to-rem(24);
+
+    &__item {
+        flex: 0 0 to-rem(106);
+        height: to-rem(50);
+        background-color: $color-d9d9d9;
+        border-radius: to-rem(4);
+    }
+}
