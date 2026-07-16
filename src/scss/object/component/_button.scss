@@ -14,7 +14,7 @@
   font-size: to-rem(16);
   font-weight: bold;
   text-align: center;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
     opacity: 0.8;
@@ -25,7 +25,14 @@
     background-color: $color-ecf2f9;
     border-color: $color-249ea6;
     color: $color-249ea6;
+
+    &:hover {
+      background-color: $color-249ea6; // 追加：塗りボタンと同じ背景色
+      color: $color-ffffff; // 追加：塗りボタンと同じ文字色
+      opacity: 1; // 親の:hoverによる透明度を打ち消す
+    }
   }
+
 
   // 小さいサイズ（ヘッダー・帯セクションのボタン用）
   &--sm {
