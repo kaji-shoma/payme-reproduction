@@ -440,106 +440,154 @@
         border-radius: to-rem(4);
     }
 }
+
 .security {
-  padding: to-rem(98) to-rem(40);
+    padding: to-rem(98) to-rem(40);
 
-  &__inner {
-    max-width: to-rem(960);
-    margin: 0 auto;
-  }
-
-  &__heading {
-    color: $color-202020;
-    font-size: to-rem(32);
-    font-weight: bold;
-    text-align: center;
-  }
-
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: to-rem(24);
-    margin: to-rem(48) 0 to-rem(12);
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: to-rem(24);
-    padding: to-rem(32);
-    border: 1px solid $color-efefef;
-    border-radius: to-rem(8);
-    margin-top: to-rem(24);
-  }
-
-  &__icon {
-    flex-shrink: 0;
-
-    img {
-      display: block;
-      width: to-rem(165);
-      height: to-rem(72);
-      object-fit: contain;
+    &__inner {
+        max-width: to-rem(960);
+        margin: 0 auto;
     }
-  }
 
-  &__body {
-    text-align: left;
-  }
+    &__heading {
+        color: $color-202020;
+        font-size: to-rem(32);
+        font-weight: bold;
+        text-align: center;
+    }
 
-  &__title {
-    color: $color-202020;
-    font-size: to-rem(18);
-    font-weight: bold;
-  }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: to-rem(24);
+        margin: to-rem(48) 0 to-rem(12);
+    }
 
-  &__text {
-    margin-top: to-rem(12);
-    color: $color-202020;
-    font-size: to-rem(14);
-    line-height: 1.8;
-  }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: to-rem(24);
+        padding: to-rem(32);
+        border: 1px solid $color-efefef;
+        border-radius: to-rem(8);
+        margin-top: to-rem(24);
+    }
+
+    &__icon {
+        flex-shrink: 0;
+
+        img {
+            display: block;
+            width: to-rem(165);
+            height: to-rem(72);
+            object-fit: contain;
+        }
+    }
+
+    &__body {
+        text-align: left;
+    }
+
+    &__title {
+        color: $color-202020;
+        font-size: to-rem(18);
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-top: to-rem(12);
+        color: $color-202020;
+        font-size: to-rem(14);
+        line-height: 1.8;
+    }
 }
 
 // ---- FAQ ----
 .faq {
-  padding: to-rem(92) to-rem(40);
-  background-color: $color-f2f2f2;
+    padding: to-rem(92) to-rem(40);
+    background-color: $color-f2f2f2;
 
-  &__inner {
-    max-width: to-rem(960);
-    margin: 0 auto;
-  }
+    &__inner {
+        max-width: to-rem(960);
+        margin: 0 auto;
+    }
 
-  &__heading {
-    color: $color-202020;
-    font-size: to-rem(32);
-    font-weight: bold;
-    text-align: center;
-    margin-top: to-rem(6);
-  }
+    &__heading {
+        color: $color-202020;
+        font-size: to-rem(32);
+        font-weight: bold;
+        text-align: center;
+        margin-top: to-rem(6);
+    }
 
-  &__list {
-    margin-top: to-rem(38);
-  }
+    &__list {
+        margin-top: to-rem(38);
+    }
 
-  &__item {
-    padding: to-rem(24) 0;
-    border-bottom: 1px solid $color-efefef;
+    &__item {
+        padding: to-rem(24) 0;
+        border-bottom: 1px solid $color-efefef;
 
-  }
+    }
 
-  &__question {
-    color: $color-249ea6;
-    font-size: to-rem(16);
-    font-weight: bold;
-  }
+    &__question {
+        color: $color-249ea6;
+        font-size: to-rem(16);
+        font-weight: bold;
+    }
 
-  &__answer {
-    margin-top: to-rem(12);
-    color: $color-202020;
-    font-size: to-rem(15);
-    line-height: 1.8;
-    letter-spacing: 0.08em;
-  }
+    &__answer {
+        margin-top: to-rem(12);
+        color: $color-202020;
+        font-size: to-rem(15);
+        line-height: 1.8;
+        letter-spacing: 0.08em;
+    }
+}
+
+// ---- Support CTA ----
+.supportCta {
+    padding: to-rem(53) to-rem(40);
+    background-color: $color-ffe000;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: to-rem(960);
+        margin: 0 auto;
+    }
+
+    &__image {
+        flex-shrink: 0;
+        width: to-rem(313);
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        max-width: to-rem(600);
+    }
+
+    &__heading {
+        color: $color-202020;
+        font-size: to-rem(24);
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-top: to-rem(13);
+        color: $color-202020;
+        font-size: to-rem(14);
+        line-height: 1.8;
+    }
+
+    &__cta {
+        display: inline-block;
+        margin-top: to-rem(25);
+    }
 }
