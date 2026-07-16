@@ -132,7 +132,7 @@
 }
 
 // ---- Concept ----
-.concept {
+.topConcept {
     padding: to-rem(80) to-rem(40);
 
     &__inner {
@@ -247,7 +247,7 @@
 }
 
 // ---- CTA Banner ----
-.cta-banner {
+.ctaBanner {
     padding: to-rem(31) to-rem(40);
     background-color: $color-ffe000;
     background-image: url("../../../assets/top/cta-banner-bg.webp");
