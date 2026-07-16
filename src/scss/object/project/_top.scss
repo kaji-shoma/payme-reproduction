@@ -6,163 +6,242 @@
 
 // ---- Hero ----
 .hero {
-  position: relative;
-  padding-top: foundation.$header-height;
-  background-image: url("../../../assets/top/hero-bg.webp");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  overflow: hidden;
+    position: relative;
+    padding-top: foundation.$header-height;
+    background-image: url("../../../assets/top/hero-bg.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
 
-  &__inner {
-    position: relative; // 背景画像より手前に表示するため
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: foundation.to-rem(1280);
-    margin: 0 auto;
-    padding: foundation.to-rem(64) foundation.to-rem(40);
-  }
-
-  &__body {
-    position: relative; // absoluteにするbadgeの基準にする
-    flex: 0 0 foundation.to-rem(560);
-  }
-
-  &__heading {
-    margin-top: foundation.to-rem(16);
-    color: foundation.$color-202020;
-    font-size: foundation.to-rem(40);
-    font-weight: bold;
-    line-height: 1.5;
-  }
-
-  &__lead {
-    margin-top: foundation.to-rem(16);
-    color: foundation.$color-202020;
-    font-size: foundation.to-rem(16);
-    font-weight: bold;
-    line-height: 1.8;
-    letter-spacing: 0.1em;
-  }
-
-  &__cta {
-    display: block;
-    width: fit-content;
-    margin: foundation.to-rem(32) auto 0;
-  }
-
-  &__visual {
-    flex: 1 1 foundation.to-rem(580);
-    min-width: 0;
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
+    &__inner {
+        position: relative; // 背景画像より手前に表示するため
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: foundation.to-rem(1280);
+        margin: 0 auto;
+        padding: foundation.to-rem(64) foundation.to-rem(40);
     }
-  }
+
+    &__body {
+        position: relative; // absoluteにするbadgeの基準にする
+        flex: 0 0 foundation.to-rem(560);
+    }
+
+    &__heading {
+        margin-top: foundation.to-rem(16);
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(40);
+        font-weight: bold;
+        line-height: 1.5;
+    }
+
+    &__lead {
+        margin-top: foundation.to-rem(16);
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(16);
+        font-weight: bold;
+        line-height: 1.8;
+        letter-spacing: 0.1em;
+    }
+
+    &__cta {
+        display: block;
+        width: fit-content;
+        margin: foundation.to-rem(32) auto 0;
+    }
+
+    &__visual {
+        flex: 1 1 foundation.to-rem(580);
+        min-width: 0;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
 // ---- Badge（ヒーロー内の「導入社数〜」バッジ。独立したBlockとして切り出し） ----
 .badge {
-  position: absolute;
-  top: foundation.to-rem(-25);
-  left: foundation.to-rem(294); // 見出しの右側あたりに配置(仮の値)
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: foundation.to-rem(204);
-  aspect-ratio: 204 / 69.066;
-  gap: foundation.to-rem(4);
-  padding: 0 foundation.to-rem(16) foundation.to-rem(20);
-  background-image: url("../../../assets/top/hero-badge-bg.webp");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  font-size: foundation.to-rem(13);
-  font-weight: bold;
+    position: absolute;
+    top: foundation.to-rem(-25);
+    left: foundation.to-rem(294); // 見出しの右側あたりに配置(仮の値)
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: foundation.to-rem(204);
+    aspect-ratio: 204 / 69.066;
+    gap: foundation.to-rem(4);
+    padding: 0 foundation.to-rem(16) foundation.to-rem(20);
+    background-image: url("../../../assets/top/hero-badge-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: foundation.to-rem(13);
+    font-weight: bold;
 
-  &__label {
-    position: relative;
-    top: foundation.to-rem(10);
-  }
+    &__label {
+        position: relative;
+        top: foundation.to-rem(10);
+    }
 
-  &__count {
-    font-size: foundation.to-rem(25);
-  }
+    &__count {
+        font-size: foundation.to-rem(25);
+    }
 }
 
 // ---- Clients ----
 .clients {
-  padding: 21px 0;
-  overflow: hidden;
+    padding: 21px 0;
+    overflow: hidden;
 
-  &__track {
-    display: flex;
-    width: fit-content;
-    animation: clients-scroll 20s linear infinite;
-  }
+    &__track {
+        display: flex;
+        width: fit-content;
+        animation: clients-scroll 20s linear infinite;
+    }
 
-  &__list {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    gap: 24px;
-    padding: 0 12px;
-  }
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 24px;
+        padding: 0 12px;
+    }
 
-  &__item {
-    flex: 0 0 140px;
-    height: 62px;
-    background-color: foundation.$color-d9d9d9;
-    border-radius: 4px;
-  }
+    &__item {
+        flex: 0 0 140px;
+        height: 62px;
+        background-color: foundation.$color-d9d9d9;
+        border-radius: 4px;
+    }
 }
 
 @keyframes clients-scroll {
-  from {
-    transform: translateX(0);
-  }
+    from {
+        transform: translateX(0);
+    }
 
-  to {
-    transform: translateX(-50%);
-  }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 // ---- Concept ----
 .concept {
-  padding: foundation.to-rem(80) foundation.to-rem(40);
+    padding: foundation.to-rem(80) foundation.to-rem(40);
 
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: foundation.to-rem(48);
-    max-width: foundation.to-rem(1280);
-    margin: 0 auto;
-  }
-
-  &__image {
-    flex-shrink: 0;
-    width: foundation.to-rem(480);
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: foundation.to-rem(48);
+        max-width: foundation.to-rem(1280);
+        margin: 0 auto;
     }
-  }
 
-  &__heading {
-    color: foundation.$color-202020;
-    font-size: foundation.to-rem(28);
-    font-weight: bold;
-    line-height: 1.6;
-  }
+    &__image {
+        flex-shrink: 0;
+        width: foundation.to-rem(480);
 
-  &__accent {
-    color: foundation.$color-249ea6;
-  }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__heading {
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(28);
+        font-weight: bold;
+        line-height: 1.6;
+    }
+
+    &__accent {
+        color: foundation.$color-249ea6;
+    }
+}
+
+// ---- Merits ----
+.merits {
+    padding: foundation.to-rem(80) foundation.to-rem(40);
+    background-color: foundation.$color-f2f2f2;
+
+    &__inner {
+        max-width: foundation.to-rem(1280);
+        margin: 0 auto;
+    }
+
+    &__heading {
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(32);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__list {
+        margin-top: foundation.to-rem(48);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: foundation.to-rem(90); // 48 → 90 に変更
+
+        &:not(:first-child) {
+            margin-top: foundation.to-rem(64);
+        }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__body {
+        flex: 0 0 foundation.to-rem(407); // 420 → 407 に変更
+    }
+
+    &__number {
+        color: foundation.$color-dec514;
+        font-size: foundation.to-rem(48);
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    &__title {
+        margin-top: foundation.to-rem(8);
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(24);
+        font-weight: bold;
+    }
+
+    &__text {
+        margin-top: foundation.to-rem(16);
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(15);
+        line-height: 1.8;
+    }
+
+    &__image {
+        flex-shrink: 0;
+        width: foundation.to-rem(463);
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__cta {
+        display: block;
+        width: fit-content;
+        margin: foundation.to-rem(114) auto 0;
+    }
 }
