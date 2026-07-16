@@ -277,7 +277,7 @@
 
 // ---- Flow ----
 .flow {
-    padding: to-rem(80) to-rem(40);
+    padding: to-rem(84) to-rem(40);
 
     &__inner {
         max-width: to-rem(1280);
@@ -285,6 +285,7 @@
     }
 
     &__heading {
+        margin-top: to-rem(14);
         color: $color-202020;
         font-size: to-rem(32);
         font-weight: bold;
@@ -292,17 +293,44 @@
     }
 
     &__list {
+        position: relative;
         display: flex;
         justify-content: center;
         gap: to-rem(64);
         margin-top: to-rem(48);
+
+        // アイコン同士をつなぐ横線(画像を使わずCSSのみで表現)
+        &::before {
+            content: "";
+            position: absolute;
+            top: to-rem(53.5);
+            left: to-rem(320);
+            right: to-rem(320);
+            height: 2px;
+            background-color: $color-202020;
+            z-index: 0;
+        }
     }
 
     &__item {
+        position: relative;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         flex: 0 0 to-rem(240);
+    }
+
+    &__icon-wrap {
+        position: relative;
+    }
+
+    &__number {
+        position: absolute;
+        top: to-rem(-38);
+        left: to-rem(-30);
+        width: to-rem(48);
+        height: auto;
     }
 
     &__icon {
@@ -310,6 +338,7 @@
         height: to-rem(107);
         border-radius: 50%;
         overflow: hidden;
+        background-color: $color-ffffff;
 
         img {
             display: block;
@@ -333,7 +362,7 @@
     }
 
     &__note {
-        margin-top: to-rem(32);
+        margin-top: to-rem(56);
         color: $color-202020;
         font-size: to-rem(12);
         text-align: center;
