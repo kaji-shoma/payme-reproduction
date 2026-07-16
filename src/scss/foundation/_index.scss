@@ -1,10 +1,9 @@
 // ==========================================================================
 // Foundation / Index
 // foundation配下の各ファイルをまとめて、外部からは
-// @use "../foundation" as foundation; の1行で読み込めるようにする窓口。
+// @use "../foundation" as *; の1行で読み込めるようにする窓口。
 // ==========================================================================
 
 @forward "reset";
 @forward "variables";
-@forward "function";
 @forward "mixin";

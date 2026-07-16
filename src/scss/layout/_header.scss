@@ -3,31 +3,31 @@
 // サイト共通のヘッダー枠
 // ==========================================================================
 @use "sass:map";
-@use "../foundation" as foundation;
+@use "../foundation" as *;
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: foundation.$header-height;
-  z-index: map.get(foundation.$z-index, header);
-  background-color: foundation.$color-ffe000;
+  height: $header-height;
+  z-index: map.get($z-index, header);
+  background-color: $color-ffe000;
 
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: foundation.to-rem(1280);
+    max-width: to-rem(1280);
     margin: 0 auto;
-    padding: 0 foundation.to-rem(40);
+    padding: 0 to-rem(40);
   }
 
   &__logo {
     display: block;
     flex-shrink: 0;
-    margin-right: foundation.to-rem(40);
+    margin-right: to-rem(40);
 
     img {
       display: block;
@@ -39,15 +39,15 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    gap: foundation.to-rem(16);
+    gap: to-rem(16);
   }
 
   &__login {
     display: flex;
     align-items: center;
-    gap: foundation.to-rem(4);
-    color: foundation.$color-202020;
-    font-size: foundation.to-rem(14);
+    gap: to-rem(4);
+    color: $color-202020;
+    font-size: to-rem(14);
     font-weight: bold;
     text-decoration: none;
 
@@ -64,15 +64,15 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: foundation.to-rem(32);
+    gap: to-rem(32);
   }
 
   &__link {
     display: flex;
     align-items: center;
-    gap: foundation.to-rem(4);
-    color: foundation.$color-202020;
-    font-size: foundation.to-rem(14);
+    gap: to-rem(4);
+    color: $color-202020;
+    font-size: to-rem(14);
     font-weight: bold;
     text-decoration: none;
     transition: opacity 0.2s ease;

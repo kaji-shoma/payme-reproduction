@@ -1,13 +1,30 @@
 // ==========================================================================
 // Foundation / Mixin
+// 規約6: px → rem / em / vw への変換関数、レスポンシブ用mixinをまとめる
 // ==========================================================================
 @use "sass:map";
-@use "variables" as vars;
+@use "sass:math";
+@use "variables" as *;
 
-// レスポンシブ用mixin（ブレイクポイント768px以下をSP用として上書き）
-// 使い方: .l-header { width: 100%; @include mq(sp) { width: 90%; } }
+// レスポンシブ用mixin(ブレイクポイント768px以下をSP用として上書き)
+// 使い方: .header { width: 100%; @include mq(sp) { width: 90%; } }
 @mixin mq($breakpoint: sp) {
-  @media (max-width: map.get(vars.$breakpoints, $breakpoint)) {
+  @media (max-width: map.get($breakpoints, $breakpoint)) {
     @content;
   }
+}
+
+// pxをremに変換(marginなど)
+@function to-rem($pixel) {
+  @return math.div($pixel, $baseFontSize) * 1rem;
+}
+
+// pxをemに変換(文字サイズに依存させたいpadding等)
+@function to-em($basis, $pixel) {
+  @return math.div($pixel, $basis) * 1em;
+}
+
+// pxをvwに変換(画面幅に応じて可変させたい場合)
+@function to-vw($pixel, $base: 1440) {
+  @return math.div($pixel, $base) * 100vw;
 }

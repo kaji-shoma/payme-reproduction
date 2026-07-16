@@ -1,9 +1,9 @@
 // ==========================================================================
 // Layout / Footer
 // ==========================================================================
-@use "../foundation" as foundation;
+@use "../foundation" as *;
 
 .footer {
-  background-color: foundation.$color-ffe000;
-  color: foundation.$color-202020;
+  background-color: $color-ffe000;
+  color: $color-202020;
 }

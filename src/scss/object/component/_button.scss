@@ -2,16 +2,16 @@
 // Object / Component / Button
 // c- プレフィックス：どのページでも使い回せる最小単位の部品
 // ==========================================================================
-@use "../../foundation" as foundation;
+@use "../../foundation" as *;
 
 .c-button {
   display: inline-block;
-  padding: foundation.to-em(16, 16) foundation.to-em(16, 32); // 規約6: paddingは文字サイズに依存させたいのでem
+  padding: to-em(16, 16) to-em(16, 32); // 規約6: paddingは文字サイズに依存させたいのでem
   border: 2px solid transparent;
   border-radius: 999px;
-  background-color: foundation.$color-249ea6;
-  color: foundation.$color-ffffff;
-  font-size: foundation.to-rem(16);
+  background-color: $color-249ea6;
+  color: $color-ffffff;
+  font-size: to-rem(16);
   font-weight: bold;
   text-align: center;
   transition: opacity 0.2s ease;
@@ -22,14 +22,14 @@
 
   // アウトライン型（資料ダウンロード等の白背景+枠線ボタン）
   &--outline {
-    background-color: foundation.$color-ecf2f9;
-    border-color: foundation.$color-249ea6;
-    color: foundation.$color-249ea6;
+    background-color: $color-ecf2f9;
+    border-color: $color-249ea6;
+    color: $color-249ea6;
   }
 
   // 小さいサイズ（ヘッダー・帯セクションのボタン用）
   &--sm {
-    padding: foundation.to-em(12, 10) foundation.to-em(12, 24);
-    font-size: foundation.to-rem(12);
+    padding: to-em(12, 10) to-em(12, 24);
+    font-size: to-rem(12);
   }
 }
