@@ -4,6 +4,91 @@
 @use "../foundation" as *;
 
 .footer {
+  padding: to-rem(29) to-rem(40) to-rem(24);
   background-color: $color-ffe000;
   color: $color-202020;
+  border-top: 1px solid #000;
+
+  &__inner {
+    max-width: to-rem(960);
+    margin: 0 auto;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__logo {
+    display: block;
+    margin-right: to-rem(78);
+
+    img {
+      display: block;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: to-rem(32);
+    padding-top: to-rem(24);
+    border-top: 1px solid #fff;
+  }
+
+  &__copyright {
+    font-size: to-rem(12);
+  }
+}
+
+// ---- Footer Nav(フッター内のナビゲーション。ヘッダーのnavとは別のBlockとして独立) ----
+.footer-nav {
+  display: flex;
+  gap: to-rem(69);
+
+  &__title {
+    font-size: to-rem(14);
+    font-weight: bold;
+  }
+
+  &__list {
+    margin-top: to-rem(12);
+  }
+
+  &__item {
+    margin-top: to-rem(8);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    color: $color-202020;
+    font-size: to-rem(13);
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+// ---- Legal(著作権表示・法的リンクのリスト) ----
+.legal {
+  display: flex;
+  gap: to-rem(16);
+
+  &__link {
+    color: $color-202020;
+    font-size: to-rem(12);
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
