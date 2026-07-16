@@ -130,3 +130,39 @@
     transform: translateX(-50%);
   }
 }
+
+// ---- Concept ----
+.concept {
+  padding: foundation.to-rem(80) foundation.to-rem(40);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: foundation.to-rem(48);
+    max-width: foundation.to-rem(1280);
+    margin: 0 auto;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    width: foundation.to-rem(480);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__heading {
+    color: foundation.$color-202020;
+    font-size: foundation.to-rem(28);
+    font-weight: bold;
+    line-height: 1.6;
+  }
+
+  &__accent {
+    color: foundation.$color-249ea6;
+  }
+}
