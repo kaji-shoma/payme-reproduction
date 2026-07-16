@@ -245,3 +245,32 @@
         margin: foundation.to-rem(114) auto 0;
     }
 }
+
+// ---- CTA Banner ----
+.cta-banner {
+    padding: foundation.to-rem(31) foundation.to-rem(40);
+    background-color: foundation.$color-ffe000;
+    background-image: url("../../../assets/top/cta-banner-bg.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+
+    &__eyebrow {
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(15);
+        font-weight: bold;
+    }
+
+    &__heading {
+        margin-top: foundation.to-rem(8);
+        color: foundation.$color-202020;
+        font-size: foundation.to-rem(24);
+        font-weight: bold;
+    }
+
+    &__cta {
+        display: inline-block;
+        margin-top: foundation.to-rem(34);
+    }
+}
