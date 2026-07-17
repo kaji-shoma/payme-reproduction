@@ -1,0 +1,73 @@
+// ==========================================================================
+// Object / Component / Coin Particle
+// マウス移動時に発生する、コインが飛び散る演出用パーティクル
+// ==========================================================================
+
+.js-coin-particle {
+  position: fixed;
+  z-index: 9999;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  animation: coin-fall var(--fall-duration, 1s) ease-in forwards;
+}
+
+@keyframes coin-fall {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+
+  20% {
+    // 発射直後、少し勢いよく飛び出す
+    transform: translate(calc(-50% + var(--drift-x, 0px) * 0.3), -150%) rotate(calc(var(--rotate, 0deg) * 0.3))
+      scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    // 横にdrift-x分散らばりながら回転し、下に大きく落下する
+    transform: translate(calc(-50% + var(--drift-x, 0px)), 300%) rotate(var(--rotate, 0deg)) scale(0.8);
+  }
+}
+
+// ---- 画面フラッシュ演出(コイン100枚到達時) ----
+.js-screen-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background-color: #000;
+  pointer-events: none;
+  animation: screen-flash 0.5s ease-out forwards;
+}
+
+@keyframes screen-flash {
+  0% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// ---- コインの雨演出(コイン100枚到達時) ----
+.js-coin-rain {
+  position: fixed;
+  top: -500px;
+  z-index: 10000;
+  width: to-rem(20);
+  height: to-rem(20);
+  pointer-events: none;
+  animation: coin-rain-fall var(--fall-duration, 1.5s) linear forwards;
+}
+
+@keyframes coin-rain-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(calc(100vh + 80px)) rotate(var(--rotate, 360deg));
+  }
+}
