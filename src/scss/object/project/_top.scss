@@ -5,7 +5,7 @@
 @use "../../foundation" as *;
 
 // ---- Hero ----
-.hero {
+.topHero {
     position: relative;
     padding-top: $header-height;
     background-image: url("../../../assets/top/hero-bg.webp");
@@ -95,7 +95,7 @@
 }
 
 // ---- Clients ----
-.clients {
+.topClients {
     padding: 21px 0;
     overflow: hidden;
 
@@ -168,7 +168,7 @@
 }
 
 // ---- Merits ----
-.merits {
+.topMerits {
     padding: to-rem(80) to-rem(40);
     background-color: $color-f2f2f2;
 
@@ -247,7 +247,7 @@
 }
 
 // ---- CTA Banner ----
-.ctaBanner {
+.topCtaBanner {
     padding: to-rem(31) to-rem(40);
     background-color: $color-ffe000;
     background-image: url("../../../assets/top/cta-banner-bg.webp");
@@ -276,7 +276,7 @@
 }
 
 // ---- Flow ----
-.flow {
+.topFlow {
     padding: to-rem(84) to-rem(40);
 
     &__inner {
@@ -370,7 +370,7 @@
 }
 
 // ---- Integrations ----
-.integrations {
+.topIntegrations {
     padding: to-rem(98) to-rem(40);
     background-color: $color-f2f2f2;
 
@@ -441,7 +441,7 @@
     }
 }
 
-.security {
+.topSecurity {
     padding: to-rem(98) to-rem(40);
 
     &__inner {
@@ -503,7 +503,7 @@
 }
 
 // ---- FAQ ----
-.faq {
+.topFaq {
     padding: to-rem(92) to-rem(40);
     background-color: $color-f2f2f2;
 
@@ -546,7 +546,7 @@
 }
 
 // ---- Support CTA ----
-.supportCta {
+.topSupportCta {
     padding: to-rem(53) to-rem(40);
     background-color: $color-ffe000;
 
