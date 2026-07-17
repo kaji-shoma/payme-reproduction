@@ -1,0 +1,41 @@
+// ==========================================================================
+// Object / Component / Hamburger
+// c- プレフィックス：メニュー開閉用のハンバーガーボタン(見た目のみ、開閉機能は今回未実装)
+// ==========================================================================
+@use "../../foundation" as *;
+
+.c-hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: to-rem(4);
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include mq(sp) {
+    display: flex; // SPの時だけ表示
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(4);
+    width: to-rem(24);
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $color-202020;
+  }
+
+  &__text {
+    color: $color-202020;
+    font-size: to-rem(10);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+}
