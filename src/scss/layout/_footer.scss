@@ -9,15 +9,30 @@
   color: $color-202020;
   border-top: 1px solid #000;
 
+  @include mq(sp) {
+    padding: to-rem(24) to-rem(24);
+  }
+
   &__inner {
     max-width: to-rem(960);
     margin: 0 auto;
+
+    @include mq(sp) {
+      max-width: to-rem(375);
+    }
   }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @include mq(sp) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: to-rem(16);
+    }
   }
 
   &__logo {
@@ -37,10 +52,21 @@
     margin-top: to-rem(32);
     padding-top: to-rem(24);
     border-top: 1px solid #fff;
+
+    @include mq(sp) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: to-rem(16);
+    }
   }
 
   &__copyright {
     font-size: to-rem(12);
+
+    @include mq(sp) {
+      order: 2; // legalより後ろに回す
+    }
   }
 }
 
@@ -81,6 +107,12 @@
 .legal {
   display: flex;
   gap: to-rem(16);
+
+  @include mq(sp) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   &__link {
     color: $color-202020;

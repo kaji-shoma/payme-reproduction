@@ -3,8 +3,13 @@
 // サイト全体で使い回す値を集約する
 // ==========================================================================
 
-// rem変換の基準値(規約6: to-rem関数で使用)
-$baseFontSize: 16;
+// rem変換の基準値(規約6: to-rem関数で使用。root font-sizeをvwで可変させる方式のため10)
+$baseFontSize: 10;
+
+// レスポンシブ基本方針: root font-sizeをvwで指定し、rem()を等倍で伸縮させる
+// SPは375px、PCは1440pxをカンプ基準幅とし、1440px以上はfont-size:10px固定(伸びすぎ防止)
+$vw-base-sp: 375;
+$vw-base-pc: 1440;
 
 // Color(カラーコードそのものを変数名にする。役割名は付けない)
 $color-ffe000: #ffe000; // ヘッダー・CTA帯・フッター背景の黄色
@@ -34,3 +39,4 @@ $z-index: (
 
 // Layout Size
 $header-height: 90px; // ヘッダーの高さ(fixed解除時の余白計算にも使用)
+$header-height-sp: 60px; // SP時のヘッダーの高さ

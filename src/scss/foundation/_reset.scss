@@ -2,6 +2,9 @@
 // Foundation / Reset
 // ブラウザ標準のスタイルを打ち消す最小限のリセット
 // ==========================================================================
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
 
 *,
 *::before,
@@ -13,6 +16,24 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+
+  // SP: 375px基準でrem(10)=10pxになるよう、画面幅に等倍で伸縮させる
+  font-size: math.div(10, $vw-base-sp) * 100 * 1vw;
+
+  // 375px超〜980pxの間は伸びすぎ防止のため固定(topHero__innerなどが375pxで幅を止めているのに合わせる)
+  @media (min-width: $vw-base-sp * 1px) {
+    font-size: 10px;
+  }
+
+  // PC: 980px超〜1440pxの間は1440px基準でrem(10)=10pxになるよう伸縮させる
+  @media (min-width: (map.get($breakpoints, sp) + 1)) {
+    font-size: math.div(10, $vw-base-pc) * 100 * 1vw;
+  }
+
+  // 1440px以上は伸びすぎ防止のため固定
+  @media (min-width: $vw-base-pc * 1px) {
+    font-size: 10px;
+  }
 }
 
 body {

@@ -8,7 +8,7 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: to-rem(4);
+  gap: 4px;
   padding: 0;
   background: none;
   border: none;
@@ -21,8 +21,8 @@
   &__lines {
     display: flex;
     flex-direction: column;
-    gap: to-rem(4);
-    width: to-rem(24);
+    gap: 4px;
+    width: 20px;
   }
 
   &__line {
@@ -34,7 +34,7 @@
 
   &__text {
     color: $color-202020;
-    font-size: to-rem(10);
+    font-size: 10px;
     font-weight: bold;
     letter-spacing: 0.05em;
   }

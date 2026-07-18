@@ -14,24 +14,37 @@
   z-index: map.get($z-index, header);
   background-color: $color-ffe000;
 
+  @include mq(sp) {
+    height: $header-height-sp;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: to-rem(1280);
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 to-rem(40);
+    padding: 0 40px;
+
+    @include mq(sp) {
+      padding: 0 16px 0 0; // SPでは左のスペースをなくし、右はハンバーガー用に少し残す
+    }
   }
 
   &__logo {
     display: block;
     flex-shrink: 0;
-    margin-right: to-rem(40);
+    margin-right: 40px;
 
     img {
       display: block;
       mix-blend-mode: multiply;
+
+      @include mq(sp) {
+        width: 87px; // ヘッダーの縮小比率(60/90)に合わせて130×58pxを縮小
+        height: 39px;
+      }
     }
   }
 
@@ -39,15 +52,15 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    gap: to-rem(16);
+    gap: 16px;
   }
 
   &__login {
     display: flex;
     align-items: center;
-    gap: to-rem(4);
+    gap: 4px;
     color: $color-202020;
-    font-size: to-rem(12);
+    font-size: 12px;
     text-decoration: none;
 
     &:hover {
@@ -72,6 +85,18 @@
       display: inline-block !important;; // SPの時だけ表示
     }
   }
+
+  // header内の.c-buttonはrem経由でroot font-sizeに連動してしまうため、
+  // 画面幅に関係なく常に同じ大きさになるよう固定pxで上書きする
+  .c-button {
+    font-size: 14px;
+    padding: 14px 28px;
+
+    &--sm {
+      font-size: 11px;
+      padding: 9px 22px;
+    }
+  }
 }
 
 // ---- Nav（ヘッダー内のナビゲーション。独立したBlockとして切り出し） ----
@@ -85,15 +110,15 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: to-rem(32);
+    gap: 32px;
   }
 
   &__link {
     display: flex;
     align-items: center;
-    gap: to-rem(3);
+    gap: 3px;
     color: $color-202020;
-    font-size: to-rem(12);
+    font-size: 12px;
     text-decoration: none;
     transition: opacity 0.2s ease;
 

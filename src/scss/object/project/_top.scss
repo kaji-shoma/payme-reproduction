@@ -14,8 +14,12 @@
     background-size: cover;
     overflow: hidden;
 
+    @include mq(sp) {
+        padding-top: $header-height-sp;
+    }
+
     &__inner {
-        position: relative; // 背景画像より手前に表示するため
+        position: relative;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -23,11 +27,23 @@
         max-width: to-rem(1280);
         margin: 0 auto;
         padding: to-rem(64) to-rem(40);
+
+        @include mq(sp) {
+            flex-direction: column;
+            align-items: center; // stretch → center に変更(中央揃え)
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            padding: to-rem(32) to-rem(24);
+        }
     }
 
     &__body {
-        position: relative; // absoluteにするbadgeの基準にする
+        position: relative;
         flex: 0 0 to-rem(560);
+
+        @include mq(sp) {
+            display: contents; // SPでは箱を透明化し、中の要素を&__innerの直接の子として並べる
+        }
     }
 
     &__heading {
@@ -36,6 +52,11 @@
         font-size: to-rem(40);
         font-weight: bold;
         line-height: 1.5;
+
+        @include mq(sp) {
+            font-size: to-rem(28);
+            text-align: center;
+        }
     }
 
     &__lead {
@@ -45,12 +66,20 @@
         font-weight: bold;
         line-height: 1.8;
         letter-spacing: 0.1em;
+
+        @include mq(sp) {
+            font-size: to-rem(16);
+        }
     }
 
     &__cta {
         display: block;
         width: fit-content;
         margin: to-rem(32) auto 0;
+
+        @include mq(sp) {
+            order: 3; // 画像の後に表示
+        }
     }
 
     &__visual {
@@ -61,6 +90,13 @@
             display: block;
             width: 100%;
             height: auto;
+        }
+
+        @include mq(sp) {
+            order: 2; // リード文の後、ボタンの前に表示
+            flex: 0 0 auto; // column時はbasisが高さに効いてしまうため解除し、画像本来の縦横比で高さが決まるようにする
+            width: 100%;
+            margin-top: to-rem(24);
         }
     }
 }
@@ -84,6 +120,11 @@
     font-size: to-rem(13);
     font-weight: bold;
 
+    @include mq(sp) {
+        position: static; // absoluteをやめて、通常の並びに戻す
+        font-size: to-rem(13);
+    }
+
     &__label {
         position: relative;
         top: to-rem(10);
@@ -91,6 +132,10 @@
 
     &__count {
         font-size: to-rem(25);
+
+        @include mq(sp) {
+            font-size: to-rem(25);
+        }
     }
 }
 
@@ -135,6 +180,10 @@
 .topConcept {
     padding: to-rem(80) to-rem(40);
 
+    @include mq(sp) {
+        padding: to-rem(24) to-rem(24);
+    }
+
     &__inner {
         display: flex;
         align-items: center;
@@ -142,6 +191,14 @@
         gap: to-rem(48);
         max-width: to-rem(1280);
         margin: 0 auto;
+
+        @include mq(sp) {
+            flex-direction: column;
+            align-items: center; // stretch → center に変更(中央揃え)
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            padding: 0 to-rem(24);
+        }
     }
 
     &__image {
@@ -149,9 +206,14 @@
         width: to-rem(480);
 
         img {
+            flex-shrink: 1;
             display: block;
             width: 100%;
             height: auto;
+        }
+
+        @include mq(sp) {
+            width: 100%;
         }
     }
 
@@ -160,6 +222,11 @@
         font-size: to-rem(28);
         font-weight: bold;
         line-height: 1.6;
+
+        @include mq(sp) {
+            font-size: to-rem(20);
+            text-align: center;
+        }
     }
 
     &__accent {
@@ -172,9 +239,20 @@
     padding: to-rem(80) to-rem(40);
     background-color: $color-f2f2f2;
 
+    @include mq(sp) {
+        padding: to-rem(40) to-rem(40);
+    }
+
     &__inner {
         max-width: to-rem(1280);
         margin: 0 auto;
+
+        @include mq(sp) {
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            padding: 0 to-rem(24);
+        }
+
     }
 
     &__heading {
@@ -182,6 +260,10 @@
         font-size: to-rem(32);
         font-weight: bold;
         text-align: center;
+
+        @include mq(sp) {
+            font-size: to-rem(24);
+        }
     }
 
     &__list {
@@ -201,6 +283,21 @@
         &:nth-child(even) {
             flex-direction: row-reverse;
         }
+
+        @include mq(sp) {
+            display: block;
+            align-items: center; // stretch → center に変更(中央揃え)
+
+            &:not(:first-child) {
+                margin-top: to-rem(24);
+            }
+
+            &:nth-child(even) {
+                flex-direction: row;
+            }
+
+        }
+
     }
 
     &__body {
@@ -232,6 +329,12 @@
         flex-shrink: 0;
         width: to-rem(463);
 
+        @include mq(sp) {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: to-rem(24);
+        }
+
         img {
             display: block;
             width: 100%;
@@ -243,6 +346,11 @@
         display: block;
         width: fit-content;
         margin: to-rem(114) auto 0;
+
+        @include mq(sp) {
+            margin: to-rem(40) auto 0;
+            font-size: to-rem(14); // SPではボタンの文字サイズを少し小さくする
+        }
     }
 }
 
@@ -260,6 +368,12 @@
         color: $color-202020;
         font-size: to-rem(15);
         font-weight: bold;
+
+        @include mq(sp) {
+            font-size: to-rem(14);
+            max-width: to-rem(375);
+            margin: 0 auto;
+        }
     }
 
     &__heading {
@@ -267,11 +381,22 @@
         color: $color-202020;
         font-size: to-rem(24);
         font-weight: bold;
+
+        @include mq(sp) {
+            font-size: to-rem(20);
+            max-width: to-rem(375);
+            margin: 0 auto;
+        }
     }
 
     &__cta {
         display: inline-block;
         margin-top: to-rem(34);
+
+        @include mq(sp) {
+            margin-top: to-rem(24);
+            max-width: to-rem(375);
+        }
     }
 }
 
@@ -279,9 +404,19 @@
 .topFlow {
     padding: to-rem(84) to-rem(40);
 
+    @include mq(sp) {
+        padding: to-rem(40) to-rem(40);
+    }
+
     &__inner {
         max-width: to-rem(1280);
         margin: 0 auto;
+
+        @include mq(sp) {
+            padding: 0 to-rem(24);
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+        }
     }
 
     &__heading {
@@ -290,6 +425,11 @@
         font-size: to-rem(32);
         font-weight: bold;
         text-align: center;
+
+        @include mq(sp) {
+            font-size: to-rem(24);
+            margin-top: 0;
+        }
     }
 
     &__list {
@@ -298,6 +438,11 @@
         justify-content: center;
         gap: to-rem(64);
         margin-top: to-rem(48);
+
+        @include mq(sp) {
+            display: block;
+            margin-top: to-rem(24);
+        }
 
         // アイコン同士をつなぐ横線(画像を使わずCSSのみで表現)
         &::before {
@@ -309,6 +454,14 @@
             height: 2px;
             background-color: $color-202020;
             z-index: 0;
+
+            @include mq(sp) {
+                top: to-rem(53.5); // 1つ目のアイコンの縦中心
+                right: auto;
+                left: to-rem(53.5); // アイコンの横中心
+                width: 2px;
+                height: to-rem(262); // 1つ目〜3つ目のアイコン中心までの距離(下記で計測して確定)
+            }
         }
     }
 
@@ -319,6 +472,15 @@
         flex-direction: column;
         align-items: center;
         flex: 0 0 to-rem(240);
+
+        @include mq(sp) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 0 0 auto;
+            gap: to-rem(8);
+            margin-top: to-rem(24);
+        }
     }
 
     &__icon-wrap {
@@ -331,6 +493,10 @@
         left: to-rem(-30);
         width: to-rem(48);
         height: auto;
+
+        @include mq(sp) {
+            display: none; // SPでは番号を非表示にする
+        }
     }
 
     &__icon {
@@ -355,6 +521,11 @@
         font-weight: bold;
         text-align: center;
         line-height: 1.6;
+
+        @include mq(sp) {
+            font-size: to-rem(14);
+            flex: 1;
+        }
     }
 
     &__accent {
@@ -366,6 +537,10 @@
         color: $color-202020;
         font-size: to-rem(12);
         text-align: center;
+
+        @include mq(sp) {
+            margin-top: to-rem(24);
+        }
     }
 }
 
@@ -374,9 +549,19 @@
     padding: to-rem(98) to-rem(40);
     background-color: $color-f2f2f2;
 
+    @include mq(sp) {
+        padding: to-rem(40) to-rem(40);
+    }
+
     &__inner {
         max-width: to-rem(960);
         margin: 0 auto;
+
+        @include mq(sp) {
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            padding: 0 to-rem(24);
+        }
     }
 
     &__heading {
@@ -384,6 +569,10 @@
         font-size: to-rem(32);
         font-weight: bold;
         text-align: center;
+
+        @include mq(sp) {
+            font-size: to-rem(18);
+        }
     }
 
     &__lead {
@@ -392,12 +581,20 @@
         font-size: to-rem(15);
         line-height: 1.8;
         text-align: center;
+
+        @include mq(sp) {
+            font-size: to-rem(14);
+        }
     }
 
     &__row {
         display: flex;
         gap: to-rem(22);
         margin-top: to-rem(24);
+
+        @include mq(sp) {
+            display: block;
+        }
     }
 
     &__note {
@@ -405,6 +602,11 @@
         color: $color-202020;
         font-size: to-rem(12);
         text-align: right;
+
+        @include mq(sp) {
+            font-size: to-rem(12);
+            text-align: center;
+        }
     }
 }
 
@@ -421,6 +623,10 @@
         font-size: to-rem(18);
         font-weight: bold;
         text-align: center;
+
+        @include mq(sp) {
+            font-size: to-rem(16);
+        }
     }
 }
 
@@ -438,15 +644,29 @@
         height: to-rem(50);
         background-color: $color-d9d9d9;
         border-radius: to-rem(4);
+
+        @include mq(sp) {
+            flex: 0 0 to-rem(80);
+            height: to-rem(38);
+        }
     }
 }
 
 .topSecurity {
     padding: to-rem(98) to-rem(40);
 
+    @include mq(sp) {
+        padding: to-rem(40) to-rem(40);
+    }
+
     &__inner {
         max-width: to-rem(960);
         margin: 0 auto;
+
+        @include mq(sp) {
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+        }
     }
 
     &__heading {
@@ -454,6 +674,10 @@
         font-size: to-rem(32);
         font-weight: bold;
         text-align: center;
+
+        @include mq(sp) {
+            font-size: to-rem(18);
+        }
     }
 
     &__list {
@@ -461,6 +685,10 @@
         flex-wrap: wrap;
         gap: to-rem(24);
         margin: to-rem(48) 0 to-rem(12);
+
+        @include mq(sp) {
+            gap: to-rem(16);
+        }
     }
 
     &__item {
@@ -471,10 +699,21 @@
         border: 1px solid $color-efefef;
         border-radius: to-rem(8);
         margin-top: to-rem(24);
+
+        @include mq(sp) {
+            display: block;
+            padding: to-rem(24);
+            margin-top: 0;
+        }
     }
 
     &__icon {
         flex-shrink: 0;
+
+        @include mq(sp) {
+            display: flex;
+            justify-content: center;
+        }
 
         img {
             display: block;
@@ -486,12 +725,21 @@
 
     &__body {
         text-align: left;
+
+        @include mq(sp) {
+            text-align: center;
+            padding-top: to-rem(16);
+        }
     }
 
     &__title {
         color: $color-202020;
         font-size: to-rem(18);
         font-weight: bold;
+
+        @include mq(sp) {
+            font-size: to-rem(16);
+        }
     }
 
     &__text {
@@ -499,6 +747,11 @@
         color: $color-202020;
         font-size: to-rem(14);
         line-height: 1.8;
+
+        @include mq(sp) {
+            font-size: to-rem(14);
+            text-align: left;
+        }
     }
 }
 
@@ -507,9 +760,18 @@
     padding: to-rem(92) to-rem(40);
     background-color: $color-f2f2f2;
 
+    @include mq(sp) {
+        padding: to-rem(40) to-rem(40);
+    }
+
     &__inner {
         max-width: to-rem(960);
         margin: 0 auto;
+
+        @include mq(sp) {
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+        }
     }
 
     &__heading {
@@ -518,15 +780,23 @@
         font-weight: bold;
         text-align: center;
         margin-top: to-rem(6);
+
+        @include mq(sp) {
+            font-size: to-rem(24);
+        }
     }
 
     &__list {
         margin-top: to-rem(38);
+
+        @include mq(sp) {
+            margin-top: to-rem(12);
+        }
     }
 
     &__item {
         padding: to-rem(24) 0;
-        border-bottom: 1px solid $color-efefef;
+        border-bottom: 1px solid $color-d9d9d9;
 
     }
 
@@ -534,6 +804,10 @@
         color: $color-249ea6;
         font-size: to-rem(16);
         font-weight: bold;
+
+        @include mq(sp) {
+            font-size: to-rem(15);
+        }
     }
 
     &__answer {
@@ -542,6 +816,10 @@
         font-size: to-rem(15);
         line-height: 1.8;
         letter-spacing: 0.08em;
+
+        @include mq(sp) {
+            font-size: to-rem(14);
+        }
     }
 }
 
@@ -550,12 +828,23 @@
     padding: to-rem(53) to-rem(40);
     background-color: $color-ffe000;
 
+    @include mq(sp) {
+        padding: to-rem(40) to-rem(40);
+    }
+
     &__inner {
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: to-rem(960);
         margin: 0 auto;
+
+        @include mq(sp) {
+            flex-direction: column;
+            align-items: center; // stretch → center に変更(中央揃え)
+            width: 100%;
+            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+        }
     }
 
     &__image {
@@ -571,12 +860,23 @@
 
     &__body {
         max-width: to-rem(600);
+
+        @include mq(sp) {
+            width: 100%;
+            margin-top: to-rem(24);
+            text-align: center; // stretch → center に変更(中央揃え)
+        }
     }
 
     &__heading {
         color: $color-202020;
         font-size: to-rem(24);
         font-weight: bold;
+
+        @include mq(sp) {
+            font-size: to-rem(20);
+            text-align: center;
+        }
     }
 
     &__text {
@@ -584,10 +884,18 @@
         color: $color-202020;
         font-size: to-rem(14);
         line-height: 1.8;
+
+        @include mq(sp) {
+            font-size: to-rem(14);
+        }
     }
 
     &__cta {
         display: inline-block;
         margin-top: to-rem(25);
+
+        @include mq(sp) {
+            margin-top: to-rem(24);
+        }
     }
 }
