@@ -28,3 +28,13 @@
 @function to-vw($pixel, $base: 1440) {
   @return math.div($pixel, $base) * 100vw;
 }
+
+// SP用コンテナ幅の上限(375px)。各セクションの&__innerで@include mq(sp) { }の中から呼び出す。
+// remではなくpxで指定している理由: root font-sizeをvwで可変させる方式のため、
+// to-rem(375)は画面幅375pxのとき1rem=10pxになる基準幅と一致し、計算上「画面幅の100%」と同義になってしまい
+// max-widthとして機能しない(常に画面幅いっぱいまで伸びる)。そのため絶対値のpxで固定する。
+// 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む。
+@mixin sp-cap-375 {
+  width: 100%;
+  max-width: 375px;
+}

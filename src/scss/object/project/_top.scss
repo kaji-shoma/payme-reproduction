@@ -31,8 +31,7 @@
         @include mq(sp) {
             flex-direction: column;
             align-items: center; // stretch → center に変更(中央揃え)
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
             padding: to-rem(32) to-rem(24);
         }
     }
@@ -66,10 +65,6 @@
         font-weight: bold;
         line-height: 1.8;
         letter-spacing: 0.1em;
-
-        @include mq(sp) {
-            font-size: to-rem(16);
-        }
     }
 
     &__cta {
@@ -122,7 +117,6 @@
 
     @include mq(sp) {
         position: static; // absoluteをやめて、通常の並びに戻す
-        font-size: to-rem(13);
     }
 
     &__label {
@@ -132,10 +126,6 @@
 
     &__count {
         font-size: to-rem(25);
-
-        @include mq(sp) {
-            font-size: to-rem(25);
-        }
     }
 }
 
@@ -195,8 +185,7 @@
         @include mq(sp) {
             flex-direction: column;
             align-items: center; // stretch → center に変更(中央揃え)
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
             padding: 0 to-rem(24);
         }
     }
@@ -206,7 +195,6 @@
         width: to-rem(480);
 
         img {
-            flex-shrink: 1;
             display: block;
             width: 100%;
             height: auto;
@@ -248,8 +236,7 @@
         margin: 0 auto;
 
         @include mq(sp) {
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
             padding: 0 to-rem(24);
         }
 
@@ -330,7 +317,6 @@
         width: to-rem(463);
 
         @include mq(sp) {
-            flex-shrink: 0;
             width: 100%;
             margin-top: to-rem(24);
         }
@@ -413,9 +399,8 @@
         margin: 0 auto;
 
         @include mq(sp) {
+            @include sp-cap-375;
             padding: 0 to-rem(24);
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
         }
     }
 
@@ -444,7 +429,7 @@
             margin-top: to-rem(24);
         }
 
-        // アイコン同士をつなぐ横線(画像を使わずCSSのみで表現)
+        // アイコン同士をつなぐ線(画像を使わずCSSのみで表現。PCは横線、SPは縦線)
         &::before {
             content: "";
             position: absolute;
@@ -558,8 +543,7 @@
         margin: 0 auto;
 
         @include mq(sp) {
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
             padding: 0 to-rem(24);
         }
     }
@@ -604,7 +588,6 @@
         text-align: right;
 
         @include mq(sp) {
-            font-size: to-rem(12);
             text-align: center;
         }
     }
@@ -664,8 +647,7 @@
         margin: 0 auto;
 
         @include mq(sp) {
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
         }
     }
 
@@ -749,7 +731,6 @@
         line-height: 1.8;
 
         @include mq(sp) {
-            font-size: to-rem(14);
             text-align: left;
         }
     }
@@ -769,8 +750,7 @@
         margin: 0 auto;
 
         @include mq(sp) {
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
         }
     }
 
@@ -842,8 +822,7 @@
         @include mq(sp) {
             flex-direction: column;
             align-items: center; // stretch → center に変更(中央揃え)
-            width: 100%;
-            max-width: 375px; // 画面幅が375pxを超える間はこのサイズで固定、それ未満は画面幅に追従して縮む(rem不使用の理由は下記解説を参照)
+            @include sp-cap-375;
         }
     }
 
@@ -884,10 +863,6 @@
         color: $color-202020;
         font-size: to-rem(14);
         line-height: 1.8;
-
-        @include mq(sp) {
-            font-size: to-rem(14);
-        }
     }
 
     &__cta {
