@@ -25,9 +25,9 @@ $color-ffffff: #ffffff; // 白
 // Font
 $font-family-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
-// Breakpoint(768px を境に PC / SP を切り替える)
+// Breakpoint(980px を境に PC / SP を切り替える)
 $breakpoints: (
-  sp: 980px, // 768px → 980px に変更
+  sp: 980px,
 );
 
 // Z-index の一元管理

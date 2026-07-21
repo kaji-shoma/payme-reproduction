@@ -29,9 +29,7 @@
         padding: to-rem(64) to-rem(40);
 
         @include mq(sp) {
-            flex-direction: column;
-            align-items: center; // stretch → center に変更(中央揃え)
-            @include sp-cap-375;
+            @include sp-stack-center;
             padding: to-rem(32) to-rem(24);
         }
     }
@@ -183,9 +181,7 @@
         margin: 0 auto;
 
         @include mq(sp) {
-            flex-direction: column;
-            align-items: center; // stretch → center に変更(中央揃え)
-            @include sp-cap-375;
+            @include sp-stack-center;
             padding: 0 to-rem(24);
         }
     }
@@ -228,7 +224,7 @@
     background-color: $color-f2f2f2;
 
     @include mq(sp) {
-        padding: to-rem(40) to-rem(40);
+        @include sp-section-padding;
     }
 
     &__inner {
@@ -261,7 +257,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: to-rem(90); // 48 → 90 に変更
+        gap: to-rem(90);
 
         &:not(:first-child) {
             margin-top: to-rem(64);
@@ -273,7 +269,7 @@
 
         @include mq(sp) {
             display: block;
-            align-items: center; // stretch → center に変更(中央揃え)
+            align-items: center;
 
             &:not(:first-child) {
                 margin-top: to-rem(24);
@@ -288,7 +284,7 @@
     }
 
     &__body {
-        flex: 0 0 to-rem(407); // 420 → 407 に変更
+        flex: 0 0 to-rem(407);
     }
 
     &__number {
@@ -391,7 +387,7 @@
     padding: to-rem(84) to-rem(40);
 
     @include mq(sp) {
-        padding: to-rem(40) to-rem(40);
+        @include sp-section-padding;
     }
 
     &__inner {
@@ -535,7 +531,7 @@
     background-color: $color-f2f2f2;
 
     @include mq(sp) {
-        padding: to-rem(40) to-rem(40);
+        @include sp-section-padding;
     }
 
     &__inner {
@@ -639,7 +635,7 @@
     padding: to-rem(98) to-rem(40);
 
     @include mq(sp) {
-        padding: to-rem(40) to-rem(40);
+        @include sp-section-padding;
     }
 
     &__inner {
@@ -742,7 +738,7 @@
     background-color: $color-f2f2f2;
 
     @include mq(sp) {
-        padding: to-rem(40) to-rem(40);
+        @include sp-section-padding;
     }
 
     &__inner {
@@ -809,7 +805,7 @@
     background-color: $color-ffe000;
 
     @include mq(sp) {
-        padding: to-rem(40) to-rem(40);
+        @include sp-section-padding;
     }
 
     &__inner {
@@ -820,9 +816,7 @@
         margin: 0 auto;
 
         @include mq(sp) {
-            flex-direction: column;
-            align-items: center; // stretch → center に変更(中央揃え)
-            @include sp-cap-375;
+            @include sp-stack-center;
         }
     }
 
@@ -843,7 +837,7 @@
         @include mq(sp) {
             width: 100%;
             margin-top: to-rem(24);
-            text-align: center; // stretch → center に変更(中央揃え)
+            text-align: center;
         }
     }
 

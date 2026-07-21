@@ -38,3 +38,16 @@
   width: 100%;
   max-width: 375px;
 }
+
+// SPで横並び(flex row)を縦積みにして中央揃えにする、よく使う3点セット。
+// 各セクションの&__innerで@include mq(sp) { }の中から呼び出す。
+@mixin sp-stack-center {
+  flex-direction: column;
+  align-items: center;
+  @include sp-cap-375;
+}
+
+// SPでのセクション本体(&__innerではなく外側のブロック)のpadding。多くのセクションで共通の値。
+@mixin sp-section-padding {
+  padding: to-rem(40) to-rem(40);
+}
